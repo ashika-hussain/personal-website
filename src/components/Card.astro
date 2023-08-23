@@ -1,6 +1,24 @@
-<h2>Blog</h2>
-<p>
-  <h3>21 Aug 2023</h3>
+---
 
- 
-</p>
+export interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+---
+
+<a href={post.url}>
+  <div>
+    <h2>
+      {post.frontmatter.title}
+    </h2>
+  </div>
+</a>
+
+<style>
+  img {
+    width: 100%;
+    aspect-ratio: 15/7;
+    object-fit: cover;
+  }
+</style>
