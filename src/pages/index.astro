@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import About from '../components/About.astro';
 import Card from '../components/Card.astro';
-import Contact from '../components/Contact.astro';
 
 
 interface MarkdownFrontmatter {
@@ -16,10 +15,9 @@ const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf
 <Layout>
   <About></About>
   <h2>Blog</h2>
-      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8" data-test="articles-section">
-        {sortedPosts.map(p => <div class="col-span-1">
+      <section class="blog-section">
+        {sortedPosts.map(p => <div class="col-span-1" style="margin-top: 2em;">
           <Card post={p} />
         </div>)}
       </section>
-  <Contact></Contact>
 </Layout>

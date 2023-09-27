@@ -4,21 +4,18 @@ export interface Props {
   post: any;
 }
 
+
+
 const { post } = Astro.props;
 ---
 
 <a href={post.url}>
   <div>
-    <h2>
+    <h2 style="margin: 0; padding:0">
       {post.frontmatter.title}
     </h2>
+    <h4 style="margin: 0; padding:0">{new Date(post.frontmatter.date).toLocaleString("en", { dateStyle: "long" })}</h4>
   </div>
 </a>
-
 <style>
-  img {
-    width: 100%;
-    aspect-ratio: 15/7;
-    object-fit: cover;
-  }
 </style>
